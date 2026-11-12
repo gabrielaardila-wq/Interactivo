@@ -1,0 +1,91 @@
+<!--
+  Panel de inicio (boceto "pantalla de inicio"): logo, escoger personaje y Jugar.
+  Colores fijos en divs normales para que no cambien con el tema oscuro.
+-->
+<style>
+  .root {
+    flex-direction: column;
+    align-items: center;
+    width: 440px;
+    padding-top: 26px;
+    padding-bottom: 22px;
+    padding-left: 26px;
+    padding-right: 26px;
+    gap: 12px;
+    background-color: #f3ead8;
+    border-radius: 30px;
+    border-width: 3px;
+    border-color: #d8c9ab;
+  }
+
+  .title {
+    color: #1d1d1f;
+    font-size: 70px;
+    font-weight: 700;
+  }
+
+  .sub {
+    color: #3b3b3f;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .hint {
+    color: #5c554c;
+    font-size: 19px;
+  }
+
+  .chars {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .char {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 16px;
+    border-width: 3px;
+    border-color: #cdbf9f;
+    background-color: #e8dec8;
+  }
+
+  .char-text {
+    color: #3b3b3f;
+    font-size: 19px;
+    font-weight: 700;
+  }
+
+  .play {
+    width: 320px;
+    height: 72px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: #8cc56b;
+  }
+
+  .play-text {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .estado {
+    color: #7a6f60;
+    font-size: 16px;
+  }
+</style>
+<div class="root">
+  <span class="title">SOBREVIVE</span>
+  <span class="sub">UAO</span>
+  <span class="hint">Escoge tu personaje</span>
+  <div class="chars">
+    <div id="pj-1" class="char"><span id="pj-1-texto" class="char-text">Personaje 1</span></div>
+    <div id="pj-2" class="char"><span id="pj-2-texto" class="char-text">Personaje 2</span></div>
+    <div id="pj-3" class="char"><span id="pj-3-texto" class="char-text">Personaje 3</span></div>
+  </div>
+  <div id="btn-jugar" class="play"><span class="play-text">Jugar</span></div>
+  <span id="estado" class="estado">Vista de navegador: usa las flechas para jugar</span>
+</div>

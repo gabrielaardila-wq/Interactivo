@@ -1,0 +1,139 @@
+<!--
+  Pantalla "Como se juega": aparece despues de darle Jugar.
+  Ojo: la fuente no trae tildes ni signos de apertura, por eso el texto va sin ellos.
+-->
+<style>
+  .root {
+    flex-direction: column;
+    width: 560px;
+    gap: 14px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 28px;
+    padding-right: 28px;
+    background-color: #f3ead8;
+    border-radius: 30px;
+    border-width: 3px;
+    border-color: #d8c9ab;
+  }
+
+  .title {
+    color: #1d1d1f;
+    font-size: 44px;
+    font-weight: 700;
+  }
+
+  .mision {
+    color: #3b3b3f;
+    font-size: 21px;
+  }
+
+  .seccion {
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 18px;
+    background-color: #e8dec8;
+  }
+
+  .seccion-titulo {
+    color: #1d1d1f;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .fila {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .chip {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    flex-shrink: 0;
+  }
+
+  .chip-verde {
+    background-color: #8cc56b;
+  }
+
+  .chip-gris {
+    background-color: #8a8378;
+  }
+
+  .chip-rojo {
+    background-color: #e5484d;
+  }
+
+  .chip-amarillo {
+    background-color: #f2c230;
+  }
+
+  .texto {
+    color: #3b3b3f;
+    font-size: 19px;
+  }
+
+  .botones {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .btn {
+    height: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .btn-empezar {
+    background-color: #8cc56b;
+  }
+
+  .btn-volver {
+    background-color: #8d8a84;
+  }
+
+  .btn-text {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+  }
+</style>
+<div class="root">
+  <span class="title">Como se juega</span>
+  <span class="mision">Hay un terremoto en los labs. Corre, esquiva lo que cae y sobrevive el mayor tiempo posible.</span>
+
+  <div class="seccion">
+    <span class="seccion-titulo">Moverte</span>
+    <div class="fila"><div class="chip chip-verde"></div><span class="texto">Cambia de carril: hay 3 (izquierda, centro, derecha)</span></div>
+    <div class="fila"><div class="chip chip-verde"></div><span class="texto">Salta para pasar por encima de los escombros</span></div>
+  </div>
+
+  <div class="seccion">
+    <span class="seccion-titulo">Peligros</span>
+    <div class="fila"><div class="chip chip-gris"></div><span class="texto">Escombros en el piso: saltalos o cambia de carril</span></div>
+    <div class="fila"><div class="chip chip-rojo"></div><span class="texto">Circulo rojo: ahi va a caer una roca del techo, quitate</span></div>
+    <div class="fila"><div class="chip chip-amarillo"></div><span class="texto">Tienes 3 vidas y cada vez vas mas rapido</span></div>
+  </div>
+
+  <div class="seccion">
+    <span class="seccion-titulo">Controles</span>
+    <span class="texto">Manos: mueve la mano rapido a un lado para cambiar de carril, subela rapido para saltar</span>
+    <span class="texto">Controles: palanca a los lados para moverte, gatillo o A / X para saltar</span>
+    <span class="texto">Teclado: flechas izquierda y derecha, flecha arriba o espacio para saltar</span>
+  </div>
+
+  <div class="botones">
+    <div id="btn-volver" class="btn btn-volver"><span class="btn-text">Volver</span></div>
+    <div id="btn-empezar" class="btn btn-empezar"><span class="btn-text">Empezar</span></div>
+  </div>
+</div>

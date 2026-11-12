@@ -1,0 +1,52 @@
+<!--
+  Marcador durante la carrera: vidas, distancia y velocidad.
+-->
+<style>
+  .root {
+    flex-direction: row;
+    align-items: center;
+    gap: 22px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 22px;
+    padding-right: 22px;
+    background-color: #232427;
+    border-radius: 24px;
+    border-width: 2px;
+    border-color: #45464c;
+  }
+
+  .vidas {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .vida {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #e5484d;
+  }
+
+  .dato {
+    color: #fafaf7;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .aviso {
+    color: #f5d90a;
+    font-size: 24px;
+    font-weight: 700;
+  }
+</style>
+<div class="root">
+  <div class="vidas">
+    <div id="vida-1" class="vida"></div>
+    <div id="vida-2" class="vida"></div>
+    <div id="vida-3" class="vida"></div>
+  </div>
+  <span id="distancia" class="dato">0 m</span>
+  <span id="velocidad" class="dato">x1.0</span>
+  <span id="aviso" class="aviso"></span>
+</div>

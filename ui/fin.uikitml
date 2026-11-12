@@ -1,0 +1,66 @@
+<!--
+  Pantalla de fin: resultado y volver a jugar.
+-->
+<style>
+  .root {
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    gap: 14px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: #f3ead8;
+    border-radius: 30px;
+    border-width: 3px;
+    border-color: #d8c9ab;
+  }
+
+  .title {
+    color: #b3202a;
+    font-size: 44px;
+    font-weight: 700;
+  }
+
+  .texto {
+    color: #3b3b3f;
+    font-size: 24px;
+  }
+
+  .botones {
+    flex-direction: row;
+    gap: 14px;
+  }
+
+  .btn {
+    height: 64px;
+    padding-left: 22px;
+    padding-right: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .btn-otra {
+    background-color: #8cc56b;
+  }
+
+  .btn-menu {
+    background-color: #8d8a84;
+  }
+
+  .btn-text {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+  }
+</style>
+<div class="root">
+  <span id="fin-titulo" class="title">Te alcanzo el terremoto</span>
+  <span id="fin-distancia" class="texto">Recorriste 0 m</span>
+  <div class="botones">
+    <div id="btn-otra" class="btn btn-otra"><span class="btn-text">Jugar otra vez</span></div>
+    <div id="btn-menu" class="btn btn-menu"><span class="btn-text">Volver al inicio</span></div>
+  </div>
+</div>

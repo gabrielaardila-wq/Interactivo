@@ -1,0 +1,143 @@
+{
+  "version": "iwsdk.scene.v1",
+  "units": "meters",
+  "components": {
+    "com.iwsdk.components.IBLGradient": {
+      "sky": [0.96, 0.94, 0.9, 1],
+      "equator": [0.8, 0.76, 0.7, 1],
+      "ground": [0.46, 0.42, 0.38, 1],
+      "intensity": 0.35
+    }
+  },
+  "environment": {
+    "toneMapping": "aces",
+    "exposure": 1,
+    "shadows": false
+  },
+  "resources": {},
+  "nodes": [
+    {
+      "id": "juego",
+      "name": "Juego (va sobre la mesa)",
+      "transform": {
+        "position": [0, 0.75, -0.55]
+      },
+      "components": {
+        "RaizJuego": {}
+      },
+      "children": [
+        {
+          "id": "mesa-virtual",
+          "name": "Mesa virtual (solo navegador)",
+          "content": {
+            "type": "asset",
+            "asset": "mesa-virtual"
+          }
+        },
+        {
+          "id": "labs",
+          "name": "Maqueta labs",
+          "content": {
+            "type": "asset",
+            "asset": "labs"
+          },
+          "transform": {
+            "position": [-0.037, -0.024, 0.119],
+            "rotationDeg": [0, 90, 0],
+            "scale": 0.00133
+          }
+        },
+        {
+          "id": "panel-menu",
+          "name": "Panel de inicio",
+          "content": {
+            "type": "asset",
+            "asset": "panel-menu"
+          },
+          "transform": {
+            "position": [0, 0.2, -0.3],
+            "rotationDeg": [-8, 0, 0],
+            "scale": 0.07
+          },
+          "components": {
+            "RayInteractable": {}
+          }
+        },
+        {
+          "id": "panel-instrucciones",
+          "name": "Como se juega",
+          "content": {
+            "type": "asset",
+            "asset": "panel-instrucciones"
+          },
+          "transform": {
+            "position": [0, 0.28, -0.3],
+            "rotationDeg": [-8, 0, 0],
+            "scale": 0.06
+          },
+          "components": {
+            "RayInteractable": {}
+          }
+        },
+        {
+          "id": "panel-hud",
+          "name": "Vidas y puntos",
+          "content": {
+            "type": "asset",
+            "asset": "panel-hud"
+          },
+          "transform": {
+            "position": [0, 0.19, -0.4],
+            "rotationDeg": [-8, 0, 0],
+            "scale": 0.075
+          }
+        },
+        {
+          "id": "panel-fin",
+          "name": "Fin del juego",
+          "content": {
+            "type": "asset",
+            "asset": "panel-fin"
+          },
+          "transform": {
+            "position": [0, 0.24, -0.25],
+            "rotationDeg": [-8, 0, 0],
+            "scale": 0.07
+          },
+          "components": {
+            "RayInteractable": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "key-light",
+      "name": "Key Light",
+      "transform": {
+        "position": [-2.3541, 11.2763, 1.762],
+        "rotationDeg": [-73.3982, -11.3134, 0]
+      },
+      "components": {
+        "DirectionalLight": {
+          "color": [1, 0.945, 0.87, 1],
+          "intensity": 2,
+          "castShadow": false
+        }
+      }
+    },
+    {
+      "id": "fill-light",
+      "name": "Fill Light",
+      "components": {
+        "HemisphereLight": {
+          "skyColor": [0.96, 0.94, 0.9, 1],
+          "groundColor": [0.55, 0.52, 0.48, 1],
+          "intensity": 1
+        }
+      }
+    }
+  ],
+  "authoring": {
+    "views": []
+  }
+}
