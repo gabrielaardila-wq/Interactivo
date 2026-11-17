@@ -42,9 +42,55 @@
             "asset": "labs"
           },
           "transform": {
-            "position": [-0.037, -0.024, 0.119],
-            "rotationDeg": [0, 90, 0],
-            "scale": 0.00133
+            "position": [0, 0, -0.0755],
+            "rotationDeg": [0, -90, 0],
+            "scale": 0.00665
+          }
+        },
+        {
+          "id": "etiqueta-inicio",
+          "name": "Etiqueta INICIO",
+          "content": { "type": "asset", "asset": "etiqueta" },
+          "transform": { "position": [-0.12, 0.075, -0.134], "rotationDeg": [-20, 0, 0], "scale": 0.045 }
+        },
+        {
+          "id": "etiqueta-rampa",
+          "name": "Etiqueta RAMPA",
+          "content": { "type": "asset", "asset": "etiqueta" },
+          "transform": { "position": [0.15, 0.075, -0.224], "rotationDeg": [-20, 0, 0], "scale": 0.045 }
+        },
+        {
+          "id": "etiqueta-escaleras",
+          "name": "Etiqueta ESCALERAS",
+          "content": { "type": "asset", "asset": "etiqueta" },
+          "transform": { "position": [-0.048, 0.075, 0.136], "rotationDeg": [-20, 0, 0], "scale": 0.045 }
+        },
+        {
+          "id": "etiqueta-salida",
+          "name": "Etiqueta SALIDA",
+          "content": { "type": "asset", "asset": "etiqueta" },
+          "transform": { "position": [0.022, 0.085, 0.181], "rotationDeg": [-20, 0, 0], "scale": 0.045 }
+        },
+        {
+          "id": "etiqueta-encuentro",
+          "name": "Etiqueta PUNTO DE ENCUENTRO",
+          "content": { "type": "asset", "asset": "etiqueta" },
+          "transform": { "position": [0.023, 0.06, 0.262], "rotationDeg": [-20, 0, 0], "scale": 0.045 }
+        },
+        {
+          "id": "panel-portada",
+          "name": "Portada",
+          "content": {
+            "type": "asset",
+            "asset": "panel-portada"
+          },
+          "transform": {
+            "position": [0, 0.22, -0.3],
+            "rotationDeg": [-8, 0, 0],
+            "scale": 0.055
+          },
+          "components": {
+            "RayInteractable": {}
           }
         },
         {
@@ -71,9 +117,9 @@
             "asset": "panel-instrucciones"
           },
           "transform": {
-            "position": [0, 0.28, -0.3],
+            "position": [0, 0.19, -0.3],
             "rotationDeg": [-8, 0, 0],
-            "scale": 0.06
+            "scale": 0.045
           },
           "components": {
             "RayInteractable": {}
@@ -109,6 +155,22 @@
           }
         }
       ]
+    },
+    {
+      "id": "panel-colocar",
+      "name": "Ajusta el mapa",
+      "content": {
+        "type": "asset",
+        "asset": "panel-colocar"
+      },
+      "transform": {
+        "position": [0.42, 0.95, -0.45],
+        "rotationDeg": [-8, -25, 0],
+        "scale": 0.045
+      },
+      "components": {
+        "RayInteractable": {}
+      }
     },
     {
       "id": "key-light",

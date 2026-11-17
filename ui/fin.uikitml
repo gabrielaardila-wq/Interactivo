@@ -2,6 +2,12 @@
   Pantalla de fin: resultado y volver a jugar.
 -->
 <style>
+  @font-face {
+    font-family: "Jersey 25";
+    src: url("../fonts/Jersey25-Regular.ttf");
+    font-weight: 400;
+  }
+
   .root {
     flex-direction: column;
     align-items: center;
@@ -11,21 +17,23 @@
     padding-bottom: 24px;
     padding-left: 24px;
     padding-right: 24px;
-    background-color: #f3ead8;
-    border-radius: 30px;
-    border-width: 3px;
-    border-color: #d8c9ab;
+    background-color: #22222a;
+    border-radius: 18px;
+    border-width: 4px;
+    border-color: #c8102e;
   }
 
   .title {
-    color: #b3202a;
-    font-size: 44px;
-    font-weight: 700;
+    font-family: "Jersey 25";
+    color: #ffb020;
+    font-size: 55px;
+    font-weight: 400;
   }
 
   .texto {
-    color: #3b3b3f;
-    font-size: 24px;
+    font-family: "Jersey 25";
+    color: #e6e6ea;
+    font-size: 30px;
   }
 
   .botones {
@@ -43,21 +51,22 @@
   }
 
   .btn-otra {
-    background-color: #8cc56b;
+    background-color: #ff051e;
   }
 
   .btn-menu {
-    background-color: #8d8a84;
+    background-color: #55565c;
   }
 
   .btn-text {
+    font-family: "Jersey 25";
     color: #ffffff;
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 35px;
+    font-weight: 400;
   }
 </style>
 <div class="root">
-  <span id="fin-titulo" class="title">Te alcanzo el terremoto</span>
+  <span id="fin-titulo" class="title">¡Te alcanzó el terremoto!</span>
   <span id="fin-distancia" class="texto">Recorriste 0 m</span>
   <div class="botones">
     <div id="btn-otra" class="btn btn-otra"><span class="btn-text">Jugar otra vez</span></div>

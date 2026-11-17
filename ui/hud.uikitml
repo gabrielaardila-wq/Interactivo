@@ -2,6 +2,12 @@
   Marcador durante la carrera: vidas, distancia y velocidad.
 -->
 <style>
+  @font-face {
+    font-family: "Jersey 25";
+    src: url("../fonts/Jersey25-Regular.ttf");
+    font-weight: 400;
+  }
+
   .root {
     flex-direction: row;
     align-items: center;
@@ -25,19 +31,21 @@
     width: 30px;
     height: 30px;
     border-radius: 15px;
-    background-color: #e5484d;
+    background-color: #ff051e;
   }
 
   .dato {
+    font-family: "Jersey 25";
     color: #fafaf7;
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 33px;
+    font-weight: 400;
   }
 
   .aviso {
-    color: #f5d90a;
-    font-size: 24px;
-    font-weight: 700;
+    font-family: "Jersey 25";
+    color: #ffb020;
+    font-size: 30px;
+    font-weight: 400;
   }
 </style>
 <div class="root">
