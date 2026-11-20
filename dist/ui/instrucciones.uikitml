@@ -1,0 +1,145 @@
+<!--
+  Pantalla "Cómo se juega": corta y ancha (tres columnas) para que el botón
+  EMPEZAR siempre se vea.
+  Letra pixel Jersey 25 (public/fonts): trae tildes, ñ y signos ¡ ¿.
+-->
+<style>
+  @font-face {
+    font-family: "Jersey 25";
+    src: url("../fonts/Jersey25-Regular.ttf");
+    font-weight: 400;
+  }
+
+  .root {
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    gap: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: #22222a;
+    border-radius: 18px;
+    border-width: 4px;
+    border-color: #c8102e;
+  }
+
+  .title {
+    font-family: "Jersey 25";
+    color: #ffffff;
+    font-size: 60px;
+  }
+
+  .columnas {
+    flex-direction: row;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .tarjeta {
+    flex-direction: column;
+    width: 270px;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 12px;
+    background-color: #33333d;
+  }
+
+  .tarjeta-titulo {
+    font-family: "Jersey 25";
+    color: #ffb020;
+    font-size: 32px;
+  }
+
+  .fila {
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .chip {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .rojo { background-color: #ff051e; }
+  .ambar { background-color: #ffb020; }
+  .verde { background-color: #22e07a; }
+  .gris { background-color: #8a8378; }
+
+  .texto {
+    font-family: "Jersey 25";
+    color: #e6e6ea;
+    font-size: 25px;
+  }
+
+  .nota {
+    font-family: "Jersey 25";
+    color: #8c8c96;
+    font-size: 21px;
+  }
+
+  .botones {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .btn {
+    height: 64px;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .btn-volver { background-color: #55565c; }
+  .btn-empezar { background-color: #ff051e; border-width: 4px; border-color: #8b0000; }
+
+  .btn-text {
+    font-family: "Jersey 25";
+    color: #ffffff;
+    font-size: 38px;
+  }
+</style>
+<div class="root">
+  <span class="title">Cómo se juega</span>
+
+  <div class="columnas">
+    <div class="tarjeta">
+      <span class="tarjeta-titulo">Tu ruta</span>
+      <div class="fila"><div class="chip rojo"></div><span class="texto">Sales del Sótano 2</span></div>
+      <div class="fila"><div class="chip ambar"></div><span class="texto">Cruce: derecho = RAMPA</span></div>
+      <div class="fila"><div class="chip verde"></div><span class="texto">Derecha = ESCALERAS</span></div>
+      <div class="fila"><div class="chip gris"></div><span class="texto">Sube, sal y llega al punto de encuentro</span></div>
+    </div>
+
+    <div class="tarjeta">
+      <span class="tarjeta-titulo">Moverte</span>
+      <div class="fila"><div class="chip verde"></div><span class="texto">Cambia entre 3 carriles</span></div>
+      <div class="fila"><div class="chip verde"></div><span class="texto">Salta los escombros</span></div>
+      <div class="fila"><div class="chip ambar"></div><span class="texto">En las esquinas dobla hacia donde se abre el pasillo</span></div>
+    </div>
+
+    <div class="tarjeta">
+      <span class="tarjeta-titulo">Peligros</span>
+      <div class="fila"><div class="chip gris"></div><span class="texto">Escombros en el piso</span></div>
+      <div class="fila"><div class="chip rojo"></div><span class="texto">Círculo rojo: ¡cae una roca!</span></div>
+      <div class="fila"><div class="chip ambar"></div><span class="texto">Pared al frente: ¡dobla!</span></div>
+      <div class="fila"><div class="chip rojo"></div><span class="texto">Tienes 3 vidas</span></div>
+    </div>
+  </div>
+
+  <span class="nota">Manos: mueve la mano a un lado o hacia arriba · Controles: palanca y gatillo · Teclado: flechas</span>
+
+  <div class="botones">
+    <div id="btn-volver" class="btn btn-volver"><span class="btn-text">Volver</span></div>
+    <div id="btn-empezar" class="btn btn-empezar"><span class="btn-text">EMPEZAR</span></div>
+  </div>
+</div>

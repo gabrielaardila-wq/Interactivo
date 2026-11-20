@@ -1,0 +1,60 @@
+<!--
+  Marcador durante la carrera: vidas, distancia y velocidad.
+-->
+<style>
+  @font-face {
+    font-family: "Jersey 25";
+    src: url("../fonts/Jersey25-Regular.ttf");
+    font-weight: 400;
+  }
+
+  .root {
+    flex-direction: row;
+    align-items: center;
+    gap: 22px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 22px;
+    padding-right: 22px;
+    background-color: #232427;
+    border-radius: 24px;
+    border-width: 2px;
+    border-color: #45464c;
+  }
+
+  .vidas {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .vida {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #ff051e;
+  }
+
+  .dato {
+    font-family: "Jersey 25";
+    color: #fafaf7;
+    font-size: 33px;
+    font-weight: 400;
+  }
+
+  .aviso {
+    font-family: "Jersey 25";
+    color: #ffb020;
+    font-size: 30px;
+    font-weight: 400;
+  }
+</style>
+<div class="root">
+  <div class="vidas">
+    <div id="vida-1" class="vida"></div>
+    <div id="vida-2" class="vida"></div>
+    <div id="vida-3" class="vida"></div>
+  </div>
+  <span id="distancia" class="dato">0 m</span>
+  <span id="velocidad" class="dato">x1.0</span>
+  <span id="aviso" class="aviso"></span>
+</div>
