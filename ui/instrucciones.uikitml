@@ -1,6 +1,11 @@
 <!--
-  Pantalla "Cómo se juega": corta y ancha (tres columnas) para que el botón
-  EMPEZAR siempre se vea.
+  Pantalla "¿CÓMO JUGAR?" (diseño de la usuaria del 25 de noviembre): título,
+  explicación, tres tarjetas con la mano (saltar, izquierda, derecha) y el
+  botón ENTENDIDO. Las manos están en public/img (recortadas de su diseño).
+  Los botones y el hundimiento se manejan en src/juego/botones.js; las letras
+  llevan pointer-events: none para que siempre responda el botón completo.
+  Colores del juego: carbón #22222a / #33333d, rojo UAO #c8102e, botón #ff051e,
+  verde #1f8a4c (como la barra de la portada).
   Letra pixel Jersey 25 (public/fonts): trae tildes, ñ y signos ¡ ¿.
 -->
 <style>
@@ -13,133 +18,132 @@
   .root {
     flex-direction: column;
     align-items: center;
-    width: 900px;
-    gap: 14px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 24px;
-    padding-right: 24px;
+    width: 640px;
+    gap: 20px;
+    padding-top: 34px;
+    padding-bottom: 36px;
+    padding-left: 30px;
+    padding-right: 30px;
     background-color: #22222a;
     border-radius: 18px;
     border-width: 4px;
     border-color: #c8102e;
   }
 
-  .title {
+  .titulo {
     font-family: "Jersey 25";
     color: #ffffff;
-    font-size: 60px;
+    font-size: 92px;
   }
 
-  .columnas {
-    flex-direction: row;
-    gap: 14px;
-    align-items: stretch;
+  .barra {
+    width: 300px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #1f8a4c;
   }
 
-  .tarjeta {
-    flex-direction: column;
-    width: 270px;
-    gap: 8px;
-    padding-top: 12px;
-    padding-bottom: 14px;
-    padding-left: 14px;
-    padding-right: 14px;
-    border-radius: 12px;
-    background-color: #33333d;
-  }
-
-  .tarjeta-titulo {
+  .texto {
     font-family: "Jersey 25";
-    color: #ffb020;
-    font-size: 32px;
+    color: #c9c9d1;
+    font-size: 34px;
+    text-align: center;
+    width: 520px;
   }
 
   .fila {
     flex-direction: row;
-    gap: 8px;
+    gap: 28px;
+  }
+
+  .tarjeta {
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
+    border-radius: 18px;
+    border-width: 3px;
+    border-color: #55565c;
+    background-color: #33333d;
   }
 
-  .chip {
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
-    flex-shrink: 0;
+  .arriba {
+    width: 270px;
+    height: 200px;
   }
 
-  .rojo { background-color: #ff051e; }
-  .ambar { background-color: #ffb020; }
-  .verde { background-color: #22e07a; }
-  .gris { background-color: #8a8378; }
+  .abajo {
+    width: 262px;
+    height: 190px;
+  }
 
-  .texto {
+  .mano-saltar {
+    pointer-events: none;
+    height: 148px;
+    width: 126px;
+  }
+
+  .mano-lado {
+    pointer-events: none;
+    height: 128px;
+    width: 156px;
+  }
+
+  .etiqueta {
+    height: 46px;
+    padding-left: 26px;
+    padding-right: 26px;
+    margin-bottom: -20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background-color: #1f8a4c;
+  }
+
+  .etiqueta-texto {
     font-family: "Jersey 25";
-    color: #e6e6ea;
-    font-size: 25px;
+    color: #ffffff;
+    font-size: 36px;
   }
 
-  .nota {
-    font-family: "Jersey 25";
-    color: #8c8c96;
-    font-size: 21px;
-  }
-
-  .botones {
-    flex-direction: row;
-    gap: 16px;
-  }
-
-  .btn {
-    height: 64px;
-    padding-left: 30px;
-    padding-right: 30px;
+  .boton {
+    width: 400px;
+    height: 96px;
+    margin-top: 18px;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
+    background-color: #ff051e;
+    border-width: 5px;
+    border-color: #8b0000;
   }
 
-  .btn-volver { background-color: #55565c; }
-  .btn-empezar { background-color: #ff051e; border-width: 4px; border-color: #8b0000; }
-
-  .btn-text {
+  .boton-texto {
     font-family: "Jersey 25";
     color: #ffffff;
-    font-size: 38px;
+    font-size: 70px;
+    pointer-events: none;
   }
 </style>
-<div class="root">
-  <span class="title">Cómo se juega</span>
+<div id="fondo" class="root">
+  <span class="titulo">¿CÓMO JUGAR?</span>
+  <div class="barra"></div>
+  <span class="texto">Usa tu mano para moverte, esquivar obstáculos y saltar.</span>
 
-  <div class="columnas">
-    <div class="tarjeta">
-      <span class="tarjeta-titulo">Tu ruta</span>
-      <div class="fila"><div class="chip rojo"></div><span class="texto">Sales del Sótano 2</span></div>
-      <div class="fila"><div class="chip ambar"></div><span class="texto">Cruce: derecho = RAMPA</span></div>
-      <div class="fila"><div class="chip verde"></div><span class="texto">Derecha = ESCALERAS</span></div>
-      <div class="fila"><div class="chip gris"></div><span class="texto">Sube, sal y llega al punto de encuentro</span></div>
+  <div class="tarjeta arriba">
+    <img class="mano-saltar" src="../img/mano-saltar.png" />
+    <div class="etiqueta"><span class="etiqueta-texto">SALTAR</span></div>
+  </div>
+
+  <div class="fila">
+    <div class="tarjeta abajo">
+      <img class="mano-lado" src="../img/mano-izquierda.png" />
+      <div class="etiqueta"><span class="etiqueta-texto">IZQUIERDA</span></div>
     </div>
-
-    <div class="tarjeta">
-      <span class="tarjeta-titulo">Moverte</span>
-      <div class="fila"><div class="chip verde"></div><span class="texto">Cambia entre 3 carriles</span></div>
-      <div class="fila"><div class="chip verde"></div><span class="texto">Salta los escombros</span></div>
-      <div class="fila"><div class="chip ambar"></div><span class="texto">En las esquinas dobla hacia donde se abre el pasillo</span></div>
-    </div>
-
-    <div class="tarjeta">
-      <span class="tarjeta-titulo">Peligros</span>
-      <div class="fila"><div class="chip gris"></div><span class="texto">Escombros en el piso</span></div>
-      <div class="fila"><div class="chip rojo"></div><span class="texto">Círculo rojo: ¡cae una roca!</span></div>
-      <div class="fila"><div class="chip ambar"></div><span class="texto">Pared al frente: ¡dobla!</span></div>
-      <div class="fila"><div class="chip rojo"></div><span class="texto">Tienes 3 vidas</span></div>
+    <div class="tarjeta abajo">
+      <img class="mano-lado" src="../img/mano-derecha.png" />
+      <div class="etiqueta"><span class="etiqueta-texto">DERECHA</span></div>
     </div>
   </div>
 
-  <span class="nota">Manos: mueve la mano a un lado o hacia arriba · Controles: palanca y gatillo · Teclado: flechas</span>
-
-  <div class="botones">
-    <div id="btn-volver" class="btn btn-volver"><span class="btn-text">Volver</span></div>
-    <div id="btn-empezar" class="btn btn-empezar"><span class="btn-text">EMPEZAR</span></div>
-  </div>
+  <div id="btn-empezar" class="boton"><span class="boton-texto">ENTENDIDO</span></div>
 </div>

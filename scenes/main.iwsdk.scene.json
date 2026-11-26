@@ -180,81 +180,6 @@
           }
         },
         {
-          "id": "panel-portada",
-          "name": "Portada",
-          "content": {
-            "type": "asset",
-            "asset": "panel-portada"
-          },
-          "transform": {
-            "position": [
-              0,
-              0.26,
-              0.3
-            ],
-            "rotationDeg": [
-              -18,
-              0,
-              0
-            ],
-            "scale": 0.045
-          },
-          "components": {
-            "RayInteractable": {},
-            "PokeInteractable": {}
-          }
-        },
-        {
-          "id": "panel-menu",
-          "name": "Panel de inicio",
-          "content": {
-            "type": "asset",
-            "asset": "panel-menu"
-          },
-          "transform": {
-            "position": [
-              0,
-              0.25,
-              0.3
-            ],
-            "rotationDeg": [
-              -18,
-              0,
-              0
-            ],
-            "scale": 0.055
-          },
-          "components": {
-            "RayInteractable": {},
-            "PokeInteractable": {}
-          }
-        },
-        {
-          "id": "panel-instrucciones",
-          "name": "Como se juega",
-          "content": {
-            "type": "asset",
-            "asset": "panel-instrucciones"
-          },
-          "transform": {
-            "position": [
-              0,
-              0.24,
-              0.3
-            ],
-            "rotationDeg": [
-              -18,
-              0,
-              0
-            ],
-            "scale": 0.034
-          },
-          "components": {
-            "RayInteractable": {},
-            "PokeInteractable": {}
-          }
-        },
-        {
           "id": "panel-hud",
           "name": "Vidas y puntos",
           "content": {
@@ -326,6 +251,66 @@
           }
         }
       ]
+    },
+    {
+      "id": "panel-portada",
+      "name": "Portada",
+      "content": {
+        "type": "asset",
+        "asset": "panel-portada"
+      },
+      "transform": {
+        "position": [
+          0,
+          1.2,
+          -0.5
+        ],
+        "scale": 0.045
+      },
+      "components": {
+        "RayInteractable": {},
+        "PokeInteractable": {}
+      }
+    },
+    {
+      "id": "panel-menu",
+      "name": "Panel de inicio",
+      "content": {
+        "type": "asset",
+        "asset": "panel-menu"
+      },
+      "transform": {
+        "position": [
+          0,
+          1.2,
+          -0.5
+        ],
+        "scale": 0.045
+      },
+      "components": {
+        "RayInteractable": {},
+        "PokeInteractable": {}
+      }
+    },
+    {
+      "id": "panel-instrucciones",
+      "name": "Como se juega",
+      "content": {
+        "type": "asset",
+        "asset": "panel-instrucciones"
+      },
+      "transform": {
+        "position": [
+          0,
+          1.2,
+          -0.5
+        ],
+        "scale": 0.042
+      },
+      "components": {
+        "RayInteractable": {},
+        "PokeInteractable": {}
+      }
     },
     {
       "id": "key-light",

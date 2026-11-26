@@ -1,6 +1,12 @@
 <!--
-  Panel de inicio (boceto "pantalla de inicio"): logo, escoger personaje y Jugar.
-  Colores del proyecto anterior: carbon #22222a, rojo UAO #c8102e, boton #ff051e.
+  Pantalla PERSONAJE (boceto del 25 de noviembre): tarjeta con el título y
+  "Ajustar el mapa", tres tarjetas cuadradas (una por personaje) y CONTINUAR.
+  Los personajes animados los dibuja el juego encima de las tarjetas: si se
+  cambian los altos, anchos o gap de aquí, hay que cambiar TARJETAS_PJ en
+  src/juego/juego-system.js.
+  Los botones y el hundimiento se manejan en src/juego/botones.js. Las letras llevan
+  pointer-events: none para que siempre responda el botón completo.
+  Colores del proyecto: carbon #22222a, rojo UAO #c8102e, boton #ff051e.
   Letra pixel Jersey 25 (public/fonts): trae tildes, ñ y signos ¡ ¿.
 -->
 <style>
@@ -13,12 +19,19 @@
   .root {
     flex-direction: column;
     align-items: center;
-    width: 440px;
-    padding-top: 22px;
-    padding-bottom: 20px;
-    padding-left: 26px;
-    padding-right: 26px;
-    gap: 12px;
+    width: 620px;
+    height: 594px;
+    gap: 24px;
+  }
+
+  .tarjeta-titulo {
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 270px;
+    gap: 8px;
     background-color: #22222a;
     border-radius: 18px;
     border-width: 4px;
@@ -28,93 +41,23 @@
   .title {
     font-family: "Jersey 25";
     color: #ffffff;
-    font-size: 88px;
-    font-weight: 400;
-  }
-
-  .sub-caja {
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 18px;
-    padding-right: 18px;
-    border-radius: 8px;
-    background-color: #c8102e;
-  }
-
-  .sub {
-    font-family: "Jersey 25";
-    color: #ffffff;
-    font-size: 35px;
-    font-weight: 400;
-  }
-
-  .lema {
-    font-family: "Jersey 25";
-    color: #ffb020;
-    font-size: 23px;
-    font-weight: 400;
+    font-size: 100px;
   }
 
   .hint {
     font-family: "Jersey 25";
-    color: #c9c9d1;
-    font-size: 24px;
-  }
-
-  .chars {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .char {
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-left: 14px;
-    padding-right: 14px;
-    border-radius: 10px;
-    border-width: 3px;
-    border-color: #33333d;
-    background-color: #33333d;
-  }
-
-  .char-text {
-    font-family: "Jersey 25";
-    color: #e6e6ea;
-    font-size: 24px;
-    font-weight: 400;
-  }
-
-  .play {
-    width: 320px;
-    height: 72px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background-color: #ff051e;
-    border-width: 4px;
-    border-color: #8b0000;
-  }
-
-  .play-text {
-    font-family: "Jersey 25";
-    color: #ffffff;
-    font-size: 50px;
-    font-weight: 400;
-  }
-
-  .estado {
-    font-family: "Jersey 25";
-    color: #8c8c96;
-    font-size: 20px;
+    color: #ffb020;
+    font-size: 30px;
   }
 
   .ajustar {
-    height: 44px;
-    padding-left: 18px;
-    padding-right: 18px;
+    height: 70px;
+    margin-top: 4px;
+    padding-left: 28px;
+    padding-right: 28px;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: #33333d;
     border-width: 3px;
     border-color: #55565c;
@@ -123,18 +66,57 @@
   .ajustar-text {
     font-family: "Jersey 25";
     color: #e6e6ea;
-    font-size: 24px;
+    font-size: 34px;
+    pointer-events: none;
+  }
+
+  .chars {
+    flex-direction: row;
+    flex-shrink: 0;
+    gap: 34px;
+  }
+
+  .char {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 18px;
+    border-width: 5px;
+    border-color: #55565c;
+    background-color: #33333d;
+  }
+
+  .play {
+    flex-shrink: 0;
+    width: 430px;
+    height: 96px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background-color: #ff051e;
+    border-width: 5px;
+    border-color: #8b0000;
+  }
+
+  .play-text {
+    font-family: "Jersey 25";
+    color: #ffffff;
+    font-size: 78px;
+    pointer-events: none;
   }
 </style>
-<div class="root">
-  <span class="title">PERSONAJE</span>
-  <span class="hint">Escoge con quién vas a sobrevivir</span>
-  <div class="chars">
-    <div id="pj-1" class="char"><span id="pj-1-texto" class="char-text">Personaje 1</span></div>
-    <div id="pj-2" class="char"><span id="pj-2-texto" class="char-text">Personaje 2</span></div>
-    <div id="pj-3" class="char"><span id="pj-3-texto" class="char-text">Personaje 3</span></div>
+<div id="fondo" class="root">
+  <div class="tarjeta-titulo">
+    <span class="title">PERSONAJE</span>
+    <span class="hint">Escoge con quién vas a sobrevivir</span>
+    <div id="btn-ajustar" class="ajustar"><span class="ajustar-text">Ajustar el mapa</span></div>
   </div>
+
+  <div class="chars">
+    <div id="pj-3" class="char"></div>
+    <div id="pj-2" class="char"></div>
+    <div id="pj-1" class="char"></div>
+  </div>
+
   <div id="btn-jugar" class="play"><span class="play-text">CONTINUAR</span></div>
-  <div id="btn-ajustar" class="ajustar"><span class="ajustar-text">Ajustar el mapa</span></div>
-  <span id="estado" class="estado">Vista de navegador: usa las flechas para jugar</span>
 </div>

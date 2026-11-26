@@ -62,10 +62,11 @@
     font-family: "Jersey 25";
     color: #ffffff;
     font-size: 35px;
+    pointer-events: none;
     font-weight: 400;
   }
 </style>
-<div class="root">
+<div id="fondo" class="root">
   <span id="fin-titulo" class="title">¡Te alcanzó el terremoto!</span>
   <span id="fin-distancia" class="texto">Recorriste 0 m</span>
   <div class="botones">
