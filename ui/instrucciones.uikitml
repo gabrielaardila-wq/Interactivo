@@ -1,7 +1,7 @@
 <!--
   Pantalla "¿CÓMO JUGAR?" (diseño de la usuaria del 25 de noviembre): título,
   explicación, tres tarjetas con la mano (saltar, izquierda, derecha) y el
-  botón ENTENDIDO. Las manos están en public/img (recortadas de su diseño).
+  botón ENTENDIDO. Las manos están en public/img (recortadas de su diseño); el juego les pone la ruta completa al cargar (ver juego-system.js), porque "../img" no sirve en GitHub Pages.
   Los botones y el hundimiento se manejan en src/juego/botones.js; las letras
   llevan pointer-events: none para que siempre responda el botón completo.
   Colores del juego: carbón #22222a / #33333d, rojo UAO #c8102e, botón #ff051e,
@@ -130,17 +130,17 @@
   <span class="texto">Usa tu mano para moverte, esquivar obstáculos y saltar.</span>
 
   <div class="tarjeta arriba">
-    <img class="mano-saltar" src="../img/mano-saltar.png" />
+    <img id="mano-saltar" class="mano-saltar" src="img/mano-saltar.png" />
     <div class="etiqueta"><span class="etiqueta-texto">SALTAR</span></div>
   </div>
 
   <div class="fila">
     <div class="tarjeta abajo">
-      <img class="mano-lado" src="../img/mano-izquierda.png" />
+      <img id="mano-izquierda" class="mano-lado" src="img/mano-izquierda.png" />
       <div class="etiqueta"><span class="etiqueta-texto">IZQUIERDA</span></div>
     </div>
     <div class="tarjeta abajo">
-      <img class="mano-lado" src="../img/mano-derecha.png" />
+      <img id="mano-derecha" class="mano-lado" src="img/mano-derecha.png" />
       <div class="etiqueta"><span class="etiqueta-texto">DERECHA</span></div>
     </div>
   </div>
